@@ -24,20 +24,20 @@ import static org.bukkit.block.Biome.*;
 public class DynmapStructuresPlugin extends JavaPlugin implements Listener {
     private static final StructureType[][] BIOMES = new StructureType[Biome.values().length][];
     private static final Map<StructureType, String> LABELS = new HashMap<StructureType, String>() {{
-        put(BURIED_TREASURE, "Buried Treasure");
-        put(DESERT_PYRAMID, "Desert Pyramid");
-        put(END_CITY, "End City");
-        put(NETHER_FORTRESS, "Nether Fortress");
-        put(IGLOO, "Igloo");
-        put(JUNGLE_PYRAMID, "Jungle Pyramid");
-        put(WOODLAND_MANSION, "Woodland Mansion");
-        put(MINESHAFT, "Abandoned Mineshaft");
-        put(OCEAN_MONUMENT, "Ocean Monument");
-        put(OCEAN_RUIN, "Underwater Ruins");
-        put(SHIPWRECK, "Shipwreck");
-        put(STRONGHOLD, "Stronghold");
-        put(SWAMP_HUT, "Witch Hut");
-        put(VILLAGE, "Village");
+        put(BURIED_TREASURE, "\u57cb\u85cf\u7684\u5b9d\u85cf");
+        put(DESERT_PYRAMID, "\u6c99\u6f20\u795e\u6bbf");
+        put(END_CITY, "\u672b\u5730\u57ce");
+        put(NETHER_FORTRESS, "\u4e0b\u754c\u8981\u585e");
+        put(IGLOO, "\u96ea\u5c4b");
+        put(JUNGLE_PYRAMID, "\u4e1b\u6797\u795e\u5e99");
+        put(WOODLAND_MANSION, "\u6797\u5730\u5e9c\u90b8");
+        put(MINESHAFT, " \u5e9f\u5f03\u77ff\u4e95");
+        put(OCEAN_MONUMENT, "\u6d77\u5e95\u9057\u8ff9");
+        put(OCEAN_RUIN, "\u6c34\u4e0b\u9057\u8ff9");
+        put(SHIPWRECK, "\u6c89\u8239");
+        put(STRONGHOLD, "\u8981\u585e");
+        put(SWAMP_HUT, "\u6cbc\u6cfd\u5c0f\u5c4b");
+        put(VILLAGE, "\u6751\u5e84");
     }};
     private static final Map<StructureType, Boolean> STRUCTURES = new HashMap<>();
 
@@ -145,9 +145,9 @@ public class DynmapStructuresPlugin extends JavaPlugin implements Listener {
             // Set up our Dynmap layer
             api = ((DynmapCommonAPI) Bukkit.getPluginManager().getPlugin("dynmap")).getMarkerAPI();
             String layer = configuration.getString("layer.name");
-            set = api.getMarkerSet(layer.toLowerCase(Locale.ROOT));
+            set = api.getMarkerSet("structures");
             if (set == null) {
-                set = api.createMarkerSet(layer.toLowerCase(Locale.ROOT), layer, null, true);
+                set = api.createMarkerSet("structures", layer, null, true);
             }
             set.setHideByDefault(configuration.getBoolean("layer.hidebydefault"));
             set.setLayerPriority(configuration.getInt("layer.layerprio"));

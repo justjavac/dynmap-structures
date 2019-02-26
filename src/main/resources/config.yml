@@ -1,22 +1,22 @@
 structures:
-  buriedtreasure: false
+  buriedtreasure: true
   desertpyramid: true
   endcity: true
   fortress: true
   igloo: true
   junglepyramid: true
   mansion: true
-  mineshaft: false
+  mineshaft: true
   monument: true
-  oceanruin: false
-  shipwreck: false
+  oceanruin: true
+  shipwreck: true
   stronghold: true
   swamphut: true
   village: true
 layer:
-  name: "Structures"
-  hidebydefault: false
+  name: "结构"
+  hidebydefault: true
   layerprio: 10
   nolabels: false
   minzoom: 0
-  inc-coord: false
+  inc-coord: true
